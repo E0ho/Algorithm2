@@ -13,7 +13,7 @@ for c in s:
     elif c == "R":
         dir_num += 1
     elif c == "F":
-        x, y = x + dx[dir_num % 4], y + dy[dir_num % 4]
+        x, y = x + dx[(dir_num + 4) % 4], y + dy[(dir_num + 4) % 4]
     else:
         print("잘못된 입력")
 
