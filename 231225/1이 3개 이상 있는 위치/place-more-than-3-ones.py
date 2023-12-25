@@ -12,17 +12,18 @@ for i in range(n):
 drs = [-1, 0, 1, 0]
 dcs = [0, 1, 0, -1]
 
-cnt = 0
+total = 0
 for r in range(n):
     for c in range(n):
 
-        near_cnt = 0
-        for i in range(4):
-            nr, nc = r + drs[i], c + dcs[i]
+        cnt = 0
+        for dr, dc in zip(drs, dcs):
+            nr, nc = r + dr, c + dc
+
             if in_range(nr, nc) and grid[nr][nc] == 1:
-                near_cnt +=1
+                cnt +=1
 
-        if near_cnt >= 3:
-            cnt += 1
+        if cnt >= 3:
+            total += 1
 
-print(cnt)
+print(total)
