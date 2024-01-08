@@ -1,5 +1,5 @@
 m = int(input())
-n = int(input())
+
 
 # n 짝수 = /2
 # n 홀수 = *3 +1
@@ -8,6 +8,8 @@ n = int(input())
 
 for _ in range(m):
     cnt = 0
+    n = int(input())
+
     while n != 1:
         cnt += 1
 
