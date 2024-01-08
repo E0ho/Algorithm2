@@ -1,5 +1,4 @@
 n = int(input())
-
 x = 100
 
 count_list = [
@@ -16,8 +15,9 @@ for _ in range(n):
             count_list[x] += 1
 
         else:
-            x -= 1
             count_list[x] += 1
+            x -= 1
+            
 
 cnt = 0
 for ele in count_list:
