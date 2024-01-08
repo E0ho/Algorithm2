@@ -1,26 +1,19 @@
 n = int(input())
 
 # 3의 배수 -> %3 == 0
-# 100의 자리   -> 3, 6, 9 
-# 10의 자리    -> 3, 6, 9 
-# 1의 자리     -> 3, 6, 9 
+# 1의 자리
+# 10의 자리
+# 100의 자리
 
 for i in range(1, n+1):
+    if i % 3 == 0:
+        print(0, end=" ")
 
-    num = i
+    elif i > 10 and i % 10 % 3 == 0:
+        print(0, end=" ")
+    
+    elif i > 10 and i // 10 % 3 == 0:
+        print(0, end=" ")
 
-    while i > 10:
-        # 1의 자리 검사
-        check = i % 10
-        if check % 3 == 0:
-            num = 0
-            break
-
-        # 1의 자리 제거
-        i = i // 10
-
-    # 3의 배수
-    if num % 3 == 0:
-        num = 0
-
-    print(num, end=" ")
+    else:
+        print(i, end=" ")
