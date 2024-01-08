@@ -1,11 +1,5 @@
 m = int(input())
 
-
-# n 짝수 = /2
-# n 홀수 = *3 +1
-
-# n이 1이 될때 까지
-
 for _ in range(m):
     cnt = 0
     n = int(input())
