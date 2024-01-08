@@ -3,7 +3,7 @@ n = int(input())
 x = 100
 
 count_list = [
-    0 for i in range(200)
+    0 for i in range(202)
 ]
 
 for _ in range(n):
