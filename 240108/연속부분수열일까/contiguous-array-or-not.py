@@ -4,23 +4,16 @@ a_list = list(map(int, input().split()))
 b_list = list(map(int, input().split()))
 
 
-for ele in b_list:
+for i in range(n1):
 
-    if ele in a_list:
+    if a_list[i] == b_list[0]:
         flag = True
-        index = a_list.index(ele)
-
-        for i in range(n2):
-            if b_list[i] != a_list[index + i]:
+        for j in range(i, i+n2):
+            if a_list[j] != b_list[j - i]:
                 flag = False
                 break
 
-    else:
-        flag = False
-
-    
 if flag:
     print("Yes")
-
 else:
     print("No")
