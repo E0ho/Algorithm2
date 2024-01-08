@@ -4,7 +4,7 @@ a_list = list(map(int, input().split()))
 b_list = list(map(int, input().split()))
 
 
-for i in range(n1 - n2):
+for i in range(n1 - n2 + 1):
 
     flag = False
     if a_list[i] == b_list[0]:
