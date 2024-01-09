@@ -20,11 +20,11 @@ def in_range(r, c):
 # 격자 채우기
 for i in range(n*m):
     grid[r][c] = chr(o)
+    o += 1
     
     if o > ord("Z"):
         o = ord("A")
-    else:
-        o += 1
+        
 
     # 가상 이동
     nr = r + drs[dir_num]
