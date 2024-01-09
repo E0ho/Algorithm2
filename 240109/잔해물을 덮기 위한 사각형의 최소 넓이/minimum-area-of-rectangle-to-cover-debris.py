@@ -1,18 +1,19 @@
 first_rec = list(map(int, input().split()))
 second_rec = list(map(int, input().split()))
+offset = 1000
 
 grid = [
-    [0] * 2000
-    for _ in range(2000)
+    [0] * 2001
+    for _ in range(2001)
 ]
 
 for i in range(first_rec[1], first_rec[3] + 1):
     for j in range(first_rec[0], first_rec[2] + 1):
-        grid[i][j] = 1
+        grid[offset + i][offset + j] = 1
 
 for i in range(second_rec[1], second_rec[3] + 1):
     for j in range(second_rec[0], second_rec[2] + 1):
-        grid[i][j] = 0
+        grid[offset + i][offset + j] = 0
 
 
 min_r = 2000
