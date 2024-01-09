@@ -23,7 +23,7 @@ def in_range(r, c):
 
 # 북 -> 서
 # 남 -> 동 
-while num < (n * n):
+while num <= (n * n):
     
     for _ in range(count):
         grid[r][c] = num
