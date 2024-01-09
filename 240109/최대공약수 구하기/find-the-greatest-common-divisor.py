@@ -3,7 +3,7 @@ n, m = tuple(map(int, input().split()))
 mi = min(n,m)
 
 ma = 1
-for i in range(1, mi):
+for i in range(1, mi+1):
     if n % i == 0 and m % i == 0:
         ma = i
 
