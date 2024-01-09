@@ -33,7 +33,10 @@ for _ in range(n):
             print(t)
             arrive = True
             break
-    
+
+    if arrive:
+        break
+        
 if arrive:
     pass
 else:
