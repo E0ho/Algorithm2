@@ -25,16 +25,16 @@ if k <= n:
 
 elif k <= 2*n:
     r = k - n - 1
-    c = n-1
+    c = n - 1
     dir_num = 3
 
 elif k <= 3*n:
-    r = n-1
-    c = n - k - 2*n
+    r = n - 1
+    c = n - (k - 2 * n)
     dir_num = 0
 
 else:
-    r = n - k - 3*n
+    r = n - (k - 3 * n)
     c = 0
     dir_num = 1
 
@@ -44,6 +44,7 @@ while in_range(r, c):
         dir_num = 3 - dir_num
         r = r + drs[dir_num]
         c = c + dcs[dir_num]
+    
     else:
         if dir_num == 0:
             dir_num = 1
@@ -59,4 +60,5 @@ while in_range(r, c):
 
         r = r + drs[dir_num]
         c = c + dcs[dir_num]
+
 print(t)
