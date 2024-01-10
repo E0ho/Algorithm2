@@ -13,7 +13,7 @@ temp = 0
 def count(i, j):
     value = 0
     for r in range(i, i+3):
-        for c in range(i, i+3):
+        for c in range(j, j+3):
             if grid[r][c] == 1:
                 value += 1
 
@@ -24,8 +24,6 @@ for i in range(n-2):
     for j in range(n-2):
         temp = count(i, j)
         max_val = max(temp, max_val)
-
-
 
 # 출력
 print(max_val)
