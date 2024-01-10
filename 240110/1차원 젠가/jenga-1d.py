@@ -7,26 +7,28 @@ grid = [
 
 length = n
 
-def cut(s, e):
-    global length, grid
+def cut_array(s, e):
     temp = []
+    global length, grid
 
     for i in range(length):
-        if s < i or e > (i + 1):
+        if i < s or i > e:
             temp.append(grid[i])
-        
+
     length = len(temp)
+
     for i in range(length):
         grid[i] = temp[i]
 
 
 for _ in range(2):
     s, e = tuple(map(int, input().split()))
-    s = n - s
-    e = n - e
 
-    cut (s, e)
+    # n번째 -> n Index
+    s -= 1
+    e -= 1
 
+    cut_array(s, e)
 
 print(length)
 for i in range(length):
