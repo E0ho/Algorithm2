@@ -5,20 +5,20 @@ grid = [
     for _ in range(2)
 ]
 
-# 초기값
-temp_1 = 0
-temp_2 = 0
-
 for _ in range(t):
     temp_1 = grid[0][n-1]
     temp_2 = grid[1][n-1]
 
-    grid[0] = grid[0][:-1]
-    grid[0].insert(0, temp_2)
+    # 1행 이동
+    for i in range(n-1, 0, -1):
+        grid[0][i] = grid[0][i-1]
+    grid[0][0] = temp_2
 
-    grid[1] = grid[1][:-1]
-    grid[1].insert(0, temp_1)
 
+    # 2행 이동
+    for i in range(n-1, 0, -1):
+        grid[1][i] = grid[1][i-1]
+    grid[1][0] = temp_1
 
 for i in range(2):
     for j in range(n):
