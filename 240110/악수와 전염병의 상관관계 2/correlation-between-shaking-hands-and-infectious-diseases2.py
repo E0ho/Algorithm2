@@ -20,7 +20,7 @@ for ele in time_line:
     x = ele[1] - 1
     y = ele[2] - 1
 
-    if (people[x] >= 1 and people[x] <= 2) or (people[y] >= 1 and people[y] <= 2):
+    if (people[x] >= 1 and people[x] <= K) or (people[y] >= 1 and people[y] <= K):
         people[x] += 1
         people[y] += 1
 
