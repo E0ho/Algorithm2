@@ -12,7 +12,7 @@ def choose(floor):
         return
 
     for i in range(1, k+1):
-        if floor != 1 and arr[-1] == i and arr[-2] == i:
+        if floor != 1 and floor != 2 and arr[-1] == i and arr[-2] == i:
             continue
         
         arr.append(i)
