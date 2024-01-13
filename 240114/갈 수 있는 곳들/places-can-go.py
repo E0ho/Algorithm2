@@ -36,6 +36,10 @@ def check(r, c):
 
 for _ in range(k):
     r, c = map(int, input().split())
-    check(r, c)
-    
+    if grid[r-1][c-1] == 0 and visited[r-1][c-1] == 0:
+        visited[r-1][c-1] = 1
+        cnt += 1
+
+    check(r-1, c-1)
+
 print(cnt)
