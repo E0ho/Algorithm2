@@ -13,7 +13,7 @@ visited = [
 # 초기값
 ans = 0
 
-# 남 동 북 서        북 동 남 서
+# 남 동 북 서
 drs = [1, 0, -1, 0]
 dcs = [0, 1, 0, -1]
 
@@ -24,6 +24,7 @@ def in_range(r,c):
 # 상하좌우 살펴보기 & 뱀 여부 확인 (이동)
 def move(r, c):
     global ans
+    print(r, c)
     if r == n - 1 and c == m - 1:
         ans = 1
         return
@@ -36,14 +37,12 @@ def move(r, c):
             if visited[nr][nc] == 0:
                 visited[nr][nc] = 1
                 move(nr, nc)
+                if ans == 1:
+                    return
 
 visited[0][0] = 1
 move(0, 0)
 print(ans)
-
-
-
-
 
 
 
