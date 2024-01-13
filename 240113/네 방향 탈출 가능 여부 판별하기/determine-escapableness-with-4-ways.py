@@ -13,9 +13,9 @@ visited = [
 # 초기값
 ans = 0
 
-# 북 동 남
-drs = [-1, 0, 1]
-dcs = [0, 1, 0]
+# 북 동 남 서
+drs = [-1, 0, 1, 0]
+dcs = [0, 1, 0, -1]
 
 def in_range(r,c):
     return (0 <= r and 0 <= c and r < n and c < m)
@@ -28,7 +28,7 @@ def move(r, c):
         ans = 1
         return
     
-    for i in range(3):
+    for i in range(4):
         nr = r + drs[i]
         nc = c + dcs[i]
 
