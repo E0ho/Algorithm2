@@ -22,24 +22,35 @@ cnt = 0
 def in_range(r, c):
     return 0 <= r and 0 <= c and r < n and c < n
 
-def check(r, c):
+def check():
     global cnt
-    for dr, dc in zip(drs, dcs):
-        nr = r + dr
-        nc = c + dc
 
-        if in_range(nr, nc) and grid[nr][nc] == 0:
-            if visited[nr][nc] == 0:
-                visited[nr][nc] = 1
-                cnt += 1
-                check(nr, nc)
+    while dq:
+        r, c = dq.popleft()
+
+        for dr, dc in zip(drs, dcs):
+            nr = r + dr
+            nc = c + dc
+
+            if in_range(nr, nc) and grid[nr][nc] == 0:
+                if visited[nr][nc] == 0:
+                    visited[nr][nc] = 1
+                    cnt += 1
+                    dq.append((nr, nc))
 
 for _ in range(k):
     r, c = map(int, input().split())
-    if grid[r-1][c-1] == 0 and visited[r-1][c-1] == 0:
-        visited[r-1][c-1] = 1
+    r -=1
+    c -=1
+
+    if visited[r][c] == 0:
+        visited[r][c] = 1
         cnt += 1
+    
+    dq.append((r,c))
+    check()
 
-    check(r-1, c-1)
 
+
+    
 print(cnt)
