@@ -41,7 +41,11 @@ for i in range(length):
             a.pop(i)
             a.insert(0, num)
             num += 1
-            
+
+for ele in total:
+    ele.sort()
+    a.append(ele)
+     
 # print(a)
 for i in range(length):
     if type(a[i]) == list:
