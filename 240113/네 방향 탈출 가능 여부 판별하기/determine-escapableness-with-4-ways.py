@@ -24,7 +24,7 @@ def in_range(r,c):
 # 상하좌우 살펴보기 & 뱀 여부 확인 (이동)
 def move(r, c):
     global ans
-    print(r, c)
+
     if r == n - 1 and c == m - 1:
         ans = 1
         return
