@@ -34,15 +34,17 @@ for ele in total:
 
 length = len(a)
 num = 1
+
 for i in range(length):
     for j in range(i+1, length):
         if a[i] == a[j]:
             a.pop(i)
-            a.append(num)
+            a.insert(0, num)
             num += 1
             
-for i in range(length - num + 1):
-
-    for ele in a[i]:
-        print(ele, end=" ")
-    print()
+# print(a)
+for i in range(length):
+    if type(a[i]) == list:
+        for ele in a[i]:
+            print(ele, end=" ")
+        print()
