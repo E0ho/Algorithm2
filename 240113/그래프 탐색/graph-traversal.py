@@ -1,5 +1,7 @@
 n, m = tuple(map(int, input().split()))
 
+#############################################
+# 방법 1 인접 행렬 사용하기
 grid = [
     list(0 for _ in range(n+1))
     for _ in range(n+1)
@@ -13,7 +15,6 @@ for _ in range(m):
     grid[x][y] = 1
     grid[y][x] = 1
 
-
 def dfs(vertex):
     global ans
     for i in range(1, n+1):
@@ -22,16 +23,12 @@ def dfs(vertex):
             dfs(i)
             ans += 1
 
-
-
 visited[1] = 1
 dfs(1)
 print(ans)
 
-
-
-
-# # 인접 리스트 채우기
+##############################################################
+# # 풀이 2 인접 리스트 사용하기
 # for _ in range(m):
 #     x, y = tuple(map(int, input().split()))
 #     li[x].append(y)
