@@ -5,6 +5,11 @@ grid=[
     for _ in range(n)
 ]
 
+visited = [
+    list(0 for i in range(m))
+    for _ in range(n)
+]
+
 # 남 동
 drs = [1, 0]
 dcs = [0, 1]
@@ -32,7 +37,10 @@ def dfs(r, c):
 
         # 격자 탈출 시 1
         if in_range(nr, nc) and grid[nr][nc] != 0:
-            dfs(nr, nc)
+            if visited[nr][nc] == 0:
+                visited[nr][nc] = 1
+                dfs(nr, nc)
 
+visited[0][0] = 1
 dfs(0, 0)
 print(ans)
