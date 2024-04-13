@@ -7,22 +7,29 @@ n = int(input())
 
 # 초기 값
 r, c = 0, 0
-
-# dx, dy (북 동 남 서)
-drs = [-1, 0, 1, 0]
-dcs = [0, 1, 0, -1]
+flag = False
+time = 0
 mapping = {
     'N':0,
     'E':1,
     'S':2,
     'W':3
 }
-flag = False
-time = 0
+
+
+# dx, dy (북 동 남 서)
+drs = [-1, 0, 1, 0]
+dcs = [0, 1, 0, -1]
+
+
+# 입력 받기
 for _ in range(n):
+
+    # 방향, 횟수
     dir_s, count = input().split()
     count = int(count)
 
+    # 방향 Dir_num
     dir_num = mapping[dir_s]
 
     # 이동
@@ -38,3 +45,6 @@ for _ in range(n):
 
     if flag:
         break
+
+if not flag:
+    print(-1)
