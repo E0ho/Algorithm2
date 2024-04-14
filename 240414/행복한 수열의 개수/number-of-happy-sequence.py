@@ -10,7 +10,7 @@ grid = [
 ]
 
 count = 0
-# 모든 행 검사
+# 모든 행, 열 검사
 for i in range(n):
     row = []
     col = []
@@ -32,7 +32,7 @@ for i in range(n):
     for i in range(1, n):
         if col[i - 1] == col[i]:
             col_count[i] = col_count[i-1] + 1
-    
+
     if max(col_count) >= m:
         count += 1
 
