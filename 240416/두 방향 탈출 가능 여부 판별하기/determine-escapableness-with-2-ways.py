@@ -16,7 +16,7 @@ dcs = [0, 1]
 
 def in_range(r, c):
     return 0 <= r and 0 <= c and r < n and c < m
-    
+
 def dfs(r, c):
 
     # 도착 종료
@@ -24,15 +24,11 @@ def dfs(r, c):
         answer = 1
         return    
 
-    # 뱀이 있는 경우
-    if grid[r][c] == 0:
-        return
-
     # 우측, 아래로 이동
     for dr, dc in zip(drs, dcs):
         nr = r + dr
         nc = c + dc
-        if in_range(nr, nc):
+        if in_range(nr, nc) and grid[nr][nc] == 1:
             dfs(nr, nc)
     
 
