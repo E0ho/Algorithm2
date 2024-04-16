@@ -23,7 +23,7 @@ def in_range(r, c):
     return 0 <= r and 0 <= c and r < n and c < m
 
 def dfs(r, c):
-
+    global answer
     # 방문
     visited[r][c] = 1
 
