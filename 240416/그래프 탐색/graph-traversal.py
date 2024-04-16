@@ -29,8 +29,8 @@ def dfs(n):
             visited[vertex] = 1
             dfs(vertex)
 
-
 # 탐색
 dfs(1)
+visited[1] = 0
 
-print(sum(visited.values()) - 1)
+print(sum(visited.values()))
