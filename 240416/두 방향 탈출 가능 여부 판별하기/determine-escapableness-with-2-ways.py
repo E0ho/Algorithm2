@@ -10,6 +10,11 @@ grid = [
     for _ in range(n)
 ]
 
+visited = [
+    [0] * m
+    for _ in range(n)
+]
+
 # 인접칸 이동 dx, dy
 drs = [1, 0]
 dcs = [0, 1]
@@ -18,6 +23,9 @@ def in_range(r, c):
     return 0 <= r and 0 <= c and r < n and c < m
 
 def dfs(r, c):
+
+    # 방문
+    visited[r][c] = 1
 
     # 도착 종료
     if r == n-1 and c == m-1:
@@ -28,7 +36,7 @@ def dfs(r, c):
     for dr, dc in zip(drs, dcs):
         nr = r + dr
         nc = c + dc
-        if in_range(nr, nc) and grid[nr][nc] == 1:
+        if in_range(nr, nc) and grid[nr][nc] == 1 and not visited[nr][nc]:
             dfs(nr, nc)
     
 
