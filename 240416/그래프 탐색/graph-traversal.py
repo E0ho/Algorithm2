@@ -8,8 +8,9 @@ n, m = map(int, input().split())
 
 
 # 그래프
-dic = {}
+dic = {1:[]}
 visited = {}        # 방문 여부
+
 for _ in range(m):
     x, y = map(int, input().split())
     
