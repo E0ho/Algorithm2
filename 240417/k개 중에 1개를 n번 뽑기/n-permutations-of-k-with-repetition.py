@@ -3,29 +3,20 @@
 # 입력
 k, n = map(int, input().split())
 
-# li = []
-
-# def choose(idx):
-#     global answer
-#     if idx == n + 1:
-#         for comb in li:
-#             print(comb, end =" ")
-#         print()
-#         return
-    
-#     for i in range(1, k+1):
-#         li.append(i)
-#         choose(idx + 1)
-#         li.pop()
-    
-
-# choose(1)
-
-from itertools import product
-
 li = []
-for i in range(1, k+1):
-    li.append(i)
 
-for tup in list(product(li, repeat = n)):
-    print(tup[0], tup[1])
+def choose(idx):
+    global answer
+    if idx == n + 1:
+        for comb in li:
+            print(comb, end =" ")
+        print()
+        return
+    
+    for i in range(1, k+1):
+        li.append(i)
+        choose(idx + 1)
+        li.pop()
+    
+
+choose(1)
