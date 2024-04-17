@@ -27,4 +27,5 @@ li = []
 for i in range(1, k+1):
     li.append(i)
 
-print(list(product(li, repeat = n)))
+for tup in list(product(li, repeat = n)):
+    print(tup[0], tup[1])
