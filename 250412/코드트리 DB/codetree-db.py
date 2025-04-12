@@ -2,7 +2,8 @@
 # init, insert, delete, rank, sum
 
 # dic = { key : value }
-
+import sys
+input = sys.stdin.readline
 
 Q = int(input())
 
