@@ -45,9 +45,9 @@ for _ in range(Q):
             print(0)
         else:
             value = db[key]
-            del db[key]
             key_set.remove(key)
-            value_set.remove(key)
+            value_set.remove(value)
+            del db[key]
             print(value)
 
     elif cmd == "rank":
