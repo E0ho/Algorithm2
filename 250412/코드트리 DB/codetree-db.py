@@ -44,8 +44,8 @@ for _ in range(Q):
         if key not in key_set:
             print(0)
         else:
-            value = dic[key]
-            del dic[key]
+            value = db[key]
+            del db[key]
             key_set.remove(key)
             value_set.remove(key)
             print(value)
